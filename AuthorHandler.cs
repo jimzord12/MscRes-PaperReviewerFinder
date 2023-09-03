@@ -43,13 +43,13 @@ static class AuthorHandler
         }
         
     }
-    public static Author GetAuthorObjectByName(string name) {
+    // public static Author GetAuthorObjectByName(string name) {
         
-        foreach (Author author in AllAuthors)
-        {
-            if (author.Name == name) return author;
-        };
+    //     foreach (Author author in AllAuthors)
+    //     {
+    //         if (author.Name == name) return author;
+    //     };
         
-        throw new InvalidOperationException();
-    }
+    //     throw new InvalidOperationException();
+    // }
 }
