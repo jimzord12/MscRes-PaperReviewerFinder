@@ -29,7 +29,7 @@ public static class Menus {
         WriteLine(); // New Line
 
         PrintRow();
-        LeftText("Select one of the following options,", 2);
+        LeftText("Select one of the following options:", 2);
         CenterText(); // New Line
         LeftText("1. Find Suitable Reviewer.", 5);
         LeftText("2. Display Current Datasheet Details.", 5);
