@@ -1,12 +1,39 @@
-﻿using Patrikakis;
-using static Patrikakis.PDFHandler;
-using UglyToad.PdfPig;
-using UglyToad.PdfPig.Content;
+﻿using Microsoft.ML;
+using Microsoft.ML.Data;
+using Microsoft.ML.AutoML;
 
-string testPath = @"C:\Users\BlockHead\Desktop\MscRes\PATRIKAKIS_KeywordsProject\AuthorsAndPapers\Blockchain\Vitalik Buterin";
-List<string> papers = GetPapersFromDir(testPath);
+using Patrikakis;
+using Patrikakis.Types;
+using Patrikakis.Tests;
+using Patrikakis.Models;
+using static Patrikakis.ConsoleDisplay.Menus;
 
-KeywordExtractor.ExtractMulti(papers);
+bool shouldTerminate = false;
+WelcomeMenu();
+do
+{
+    OptionsMenu();
+    int userChoice = Helpers.GetSafeIntegerWithinRange(1, 5);
+    switch (userChoice)
+    {
+        case 1:
+            ReviewerFinderMenu(); // C:\Users\Jimzord12\Desktop\MscRes\Thesys_Final_v3.0.pdf
+            break;
+        case 2:
+            DisplayDataMenu(); // C:\FastPaths\AuthorsAndPapers
+            break;
+        case 3:
+            TrainNewModelMenu();
+            break;
+        case 4:
+            DescriptionMenu();
+            break;
+        case 5:
+            shouldTerminate = true;
+            break;
 
+        default:
+            throw new ArgumentOutOfRangeException();
+    }
 
-
+} while (!shouldTerminate);
